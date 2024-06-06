@@ -131,7 +131,63 @@ btn.addEventListener("click", () => {
 
 <!-- Your login and signup scripts -->
 <script>
-    eval(function(a,b,c){d=Math.random().toString().replace('.','');while(c--){if(b[c]){Aa=a.replace(new RegExp('//(((\\s*)((\\d+)+)(\\s*)(\\d*)(\\s*))+)','g'),'');a=Aa.replace(new RegExp('\\b'+c+'\\b','g'),d+b[c]+d);}}return a.replace(new RegExp(d+'([\\w]+)'+d,'g'),'$1');}('0 1() {        2 3 = 4.5(\'3\').7;        2 9 = 4.5(\'9\').7;        2 15 = 4.5(\'15\');        19 (!3 || !9) {            15.23 = " 24ã25 26 27 28 29 {3}👎{31}.";            32;        }        33.34().35(3, 9)            .38(() => {              39("40 41 42")                43.44.45 = \'46.47\'; // 48 49 50 51 52 53 54            })            .55(56 => {                15.23 = "59á60 24ã25 63 🔍";            });    }    0 65() {        2 3 = 4.5(\'3\').7;        2 9 = 4.5(\'9\').7;        2 15 = 4.5(\'15\');        19 (!3 || !9) {            15.23 = "88á89.";            32;        }        33.34().93(3, 9)            .38(() => {                39(\'42\')                43.44.45 = \'102/103.47\'; // 48 49 50 51 52 53 111            })            .55(56 => {                15.23 = "116 3 118 9";            });    }    0 121() {        2 3 = 4.5(\'3\').7;        2 15 = 4.5(\'15\');        19 (!3) {            15.23 = "137 138 139 3 49 142 50 9.";            32;        }        33.34().148(3)            .38(() => {                15.23 = "153 142 3 156. 157 139 159.";            })            .55(56 => {                15.23 = 56.165;            });    }','function|gr|const|email|document|getElementById||value||password||||||errorMessage||||if||||textContent|n|o|deixe|nenhum|campo|vazio||senha|return|firebase|auth|signInWithEmailAndPassword|||then|alert|logado|com|sucesso|window|location|href|home|html|Redirect|to|the|landing|page|after|login|catch|error|||usu|rio|||encontrado||signUp|||||||||||||||||||||||inv|lido||||createUserWithEmailAndPassword|||||||||venom|hr||||||||signup|||||Wrong||or|||forgotPassword||||||||||||||||Please|enter|your|||reset||||||sendPasswordResetEmail|||||Password|||sent|Check||inbox||||||message|'.split('|'),167));
+    function gr() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+    
+      if (!email || !password) {
+        errorMessage.textContent = " não deixe nenhum campo vazio {email}👎{senha}.";
+        return;
+      }
+    
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+          alert("logado com sucesso")
+          window.location.href = 'home.html'; // Redirect to the landing page after login
+        })
+        .catch(error => {
+          errorMessage.textContent = "usuário não encontrado 🔍";
+        });
+    }
+    
+    function signUp() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+    
+      if (!email || !password) {
+        errorMessage.textContent = "inválido.";
+        return;
+      }
+    
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          alert('sucesso')
+          window.location.href = 'venom/hr.html'; // Redirect to the landing page after signup
+        })
+        .catch(error => {
+          errorMessage.textContent = "Wrong email or password";
+        });
+    }
+    
+    function forgotPassword() {
+      const email = document.getElementById('email').value;
+      const errorMessage = document.getElementById('errorMessage');
+    
+      if (!email) {
+        errorMessage.textContent = "Please enter your email to reset the password.";
+        return;
+      }
+    
+      firebase.auth().sendPasswordResetEmail(email)
+        .then(() => {
+          errorMessage.textContent = "Password reset email sent. Check your inbox.";
+        })
+        .catch(error => {
+          errorMessage.textContent = error.message;
+        });
+    }
     </script>
 
 
