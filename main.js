@@ -1,6 +1,6 @@
 function s(){
-  window.location.href="https://wa.me//+258840186884"
-  alert("falar com suporte...")
+  window.location.href="https://whatsapp.com/channel/0029VabfYRK2UPBNDEfk9A3D"
+  alert("grupo do whatsapp...")
 }
 
 function ola(){
