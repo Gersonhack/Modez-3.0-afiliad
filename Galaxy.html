@@ -54,7 +54,17 @@ btn.addEventListener("click", () => {
 <!-- Your login and signup scripts -->
 <script>
     function gr(){const n=document.getElementById("email").value,t=document.getElementById("password").value,i=document.getElementById("errorMessage");let r;if(Swal.fire({icon:"success",title:"fazendo login",html:"aguarde a verificação <b><\/b> milliseconds.",timer:3e3,timerProgressBar:!0,didOpen:()=>{Swal.showLoading();const n=Swal.getPopup().querySelector("b");r=setInterval(()=>{n.textContent=`${Swal.getTimerLeft()}`},100)},willClose:()=>{clearInterval(r)}}).then(n=>{n.dismiss===Swal.DismissReason.timer&&console.log("I was closed by the timer")}),!n||!t){i.textContent=" não deixe nenhum campo vazio {email}👎{senha}.";return}firebase.auth().signInWithEmailAndPassword(n,t).then(()=>{alert("logado com sucesso"),window.location.href="painel.html"}).catch(()=>{i.textContent="usuário não encontrado 🔍"})}function signUp(){const n=document.getElementById("email").value,t=document.getElementById("password").value,i=document.getElementById("errorMessage");if(!n||!t){i.textContent="inválido.";return}firebase.auth().createUserWithEmailAndPassword(n,t).then(()=>{alert("sucesso"),window.location.href="venom/hr.html"}).catch(()=>{i.textContent="Wrong email or password"})}function forgotPassword(){const t=document.getElementById("email").value,n=document.getElementById("errorMessage");if(!t){n.textContent="Please enter your email to reset the password.";return}firebase.auth().sendPasswordResetEmail(t).then(()=>{n.textContent="Password reset email sent. Check your inbox."}).catch(t=>{n.textContent=t.message})}
-    eval(function(a,b,c){d=Math.random().toString().replace('.','');while(c--){if(b[c]){Aa=a.replace(new RegExp('//(((\\s*)((\\d+)+)(\\s*)(\\d*)(\\s*))+)','g'),'');a=Aa.replace(new RegExp('\\b'+c+'\\b','g'),d+b[c]+d);}}return a.replace(new RegExp(d+'([\\w]+)'+d,'g'),'$1');}('0 1 = {      2: "3-4",      5: "6-7.8.9",      10: "11://6-7-14-15.16.9",      18: "6-7",      21: "6-7.24.9",      26: "27",      28: "29:27:31:32",      33: "34-35"    };36.37(1);','const|firebaseConfig|apiKey|AIzaSyBIiBJR|ZUp1mey25_7LwaA0y6A_I0GJIU|authDomain|ios|bets|firebaseapp|com|databaseURL|https|||default|rtdb|firebaseio||projectId|||storageBucket|||appspot||messagingSenderId|960843956174|appId|1||web|d8c44d1e99a9ad3262759f|measurementId|G|L7XEKJBLZ1|firebase|initializeApp||'.split('|'),40));
+    const firebaseConfig = {
+      apiKey: "AIzaSyBihDjaJvIyB3PzVmO_tkFgSlJyqg52xfY",
+      authDomain: "contole-boot-web.firebaseapp.com",
+      databaseURL: "https://contole-boot-web-default-rtdb.firebaseio.com",
+      projectId: "contole-boot-web",
+      storageBucket: "contole-boot-web.appspot.com",
+      messagingSenderId: "719052334674",
+      appId: "1:719052334674:web:3722c9cfbe07453b0c218b",
+      measurementId: "G-MV15PJHVRH"
+    };
+    firebase.initializeApp(firebaseConfig);
     </script><script src="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js
 "></script><linkhref="
