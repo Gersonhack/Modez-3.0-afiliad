@@ -389,5 +389,24 @@ function log(){
 alert('erro🚫 clica no botão registar')
 }
 </script>
+<script>
+ 
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+     
+      console.log("Usuário logado!");
+    }
+
+
+    else {
+      
+      console.log("Usuário não logado! Redirecionando...");
+      alert('modo hack {verificado}👨‍💻')
+      window.location.replace("../index.html");
+
+    }
+
+  });
+</script>
 </body>
 </html>

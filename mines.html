@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="pt"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💣 Mines Hack 💣</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+      select{
+        width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid greenyellow; /* Borda cinza */
+    border-radius: 4px;
+    margin-bottom: 10px;
+    outline: none;
+    background-color: transparent;
+    color: white;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="images/logo.png" alt="Imagem Superior" id="top-image">
+        <h3>💣 Selecionar Nível médio 💣</h3>
+                  <select>               <option>elephant bet Moz</option>                <option>elephant bet angola</option>            </select>                 
+        <div id="grid"></div>
+        <button id="changeButton" onclick="updateImages()">
+            Gerar Hack <span id="timer" style="display: none;"></span>
+        </button>
+        <button id="accessGameButton" onclick="m()">
+            Acessar elephantbet moz
+        </button>
+        <br>
+                <button id="accessGameButton" onclick="mm()">
+                  Acessar elephantbet angola</button>
+    </div>
+
+    <script src="js/scripts.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-auth-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBIiBJR-ZUp1mey25_7LwaA0y6A_I0GJIU",
+    authDomain: "ios-bets.firebaseapp.com",
+    databaseURL: "https://ios-bets-default-rtdb.firebaseio.com",
+    projectId: "ios-bets",
+    storageBucket: "ios-bets.appspot.com",
+    messagingSenderId: "960843956174",
+    appId: "1:960843956174:web:d8c44d1e99a9ad3262759f",
+    measurementId: "G-L7XEKJBLZ1"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+  // Verifica se o usuário está autenticado ao carregar a página
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      //Usuário está logado, permanece na tela
+      console.log("Usuário logado!");
+    }
+
+
+    else {
+      //Usuário não está logado, redireciona para index.html
+      console.log("Usuário não logado! Redirecionando...");
+      alert('modo hack {verificado}👨‍💻')
+      window.location.replace("../index.html");
+
+    }
+
+  });
+</script>
+
+</body></html>

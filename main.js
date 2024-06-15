@@ -21,3 +21,16 @@ function b() {
   window.location.href = "b.html"
 
 }
+
+function bet() {
+  window.location.href = "bet.html"
+}
+function bett() {
+  window.location.href = "bett.html"
+}
+function w() {
+  window.location.href = "gera.html"
+}
+function ww() {
+  window.location.href = "mines.html"
+}
